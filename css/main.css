@@ -1,0 +1,116 @@
+html,body{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+.head {
+    height: 50px;
+    background: #8ED498;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+#home{
+    height: 100%;
+}
+#account{
+    width: 96%;
+    height: 150px;
+    background: #e74c3c;
+    color: #ffffff;
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin: 2%;
+}
+#account h2{
+    margin-left: 10%;
+    padding-top: 10px;
+}
+#account span{
+    margin-left: 10%;
+}
+#account p{
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+#add{
+    height: 50px;
+    width: 96%;
+    background: #449fdb;
+    margin: 2%;
+    border-radius: 5px;
+    line-height: 50px;
+    text-align: center;
+}
+#add a{
+    color: #ffffff;
+    display: block ;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+#wrap ul li{
+    height: 70px;
+    width: 100%;
+    line-height: 70px;
+    font-size: 1.5em;
+}
+#wrap h2 {
+    margin-left: 10%;
+}
+#wrap span{
+    margin-left: 10%;
+}
+.border{
+    background: #cccccc;
+    background-image:linear-gradient(180deg, #ccc, #ccc 50%, #fff 50%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+/*ÃÌº”“≥*/
+#page1{
+    width: 100%;
+    height: 100%;
+    background:#ffffff;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+#page1 .head{
+    background: #16a085;
+}
+#page1 .head p{
+    float: left;
+}
+#category li{
+    height: 70px;
+    width: 100%;
+}
+#category li a{
+    display: block;
+    float: left;
+    margin-right: 3%;
+    width: 22%;
+    line-height: 70px;
+    text-align: center;
+}
+
+.in {
+    /*transition: transform 10s;*/
+    /*transform: translate3d(-100%,0,0);*/
+    transform: translate3d(-100%,0,0);
+    transition:transform 1s;
+}
+.out {
+    /*transition: transform 10s;*/
+    /*transform: translate3d(-100%,0,0);*/
+    transform: translate3d(0,0,0);
+    transition:transform 1s;
+}

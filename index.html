@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>移动记账薄</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset1.0.css">
+    <script src="js/main.js"></script>
+    <script>
+        window.onload = function (){
+            var page1 = document.getElementById("page1");
+            var ca = document.getElementById("category")
+            var home = document.getElementById("home");
+            var add = document.getElementById("add");
+            var addbtn = add.getElementsByTagName("a")[0];
+            var rebtn = page1.getElementsByTagName("a")[0];
+            var account = document.getElementById("account");
+            var timeC = account.getElementsByTagName("h2")[0];
+            var inp = ca.getElementsByTagName("input");
+           //addbtn触摸事件
+            addbtn.onclick= function () {
+                page1.className ="in";
+            }
+            rebtn.onclick= function () {
+                page1.className ="out";
+            }
+            var date = new Date();
+            var time = date.toLocaleDateString();
+            timeC.innerHTML = time;
+            //add
+            var stri = new Array("收入","衣服","饮食","住宿","交通","购物","其他");
+            var addCBtn = ca.getElementsByTagName("a");
+            addCBtn[0].onclick =function(){
+                var ti = date.toLocaleDateString();
+                inp[0].value = ti;
+                inp[1].value = "收入";
+//                addIn(ti,"66");
+//                console.log(inc);
+            }
+
+            for(var i=1;i<addCBtn.length;i++){
+                addCBtn[i].setAttribute('data-kind',stri[i]);
+                addCBtn[i].onclick = function(){
+                    var ti = date.toLocaleDateString();
+                    var kind = this.getAttribute('data-kind');
+                    inp[0].value = ti;
+                    inp[1].value = kind;
+//                    var ti = date.toLocaleDateString();
+//                    addOut(kind,ti,"66");
+//                    console.log(outc);
+                }
+            }
+            inp[3].onclick = function(){
+                var t = inp[0].value;
+                var k = inp[1].value;
+                var c = inp[2].value;
+                if(k == "收入"){
+                    addIn(t,c);
+                }else{
+                    addOut(t,k,c);
+                }
+                return false;
+            }
+            console.log(localStorage.outc);
+            console.log(localStorage.inc);
+
+        }
+    </script>
+</head>
+<body>
+    <div id="home">
+        <div class="head">
+            <h1>我的记账本</h1>
+        </div>
+        <div id="account">
+            <h2>7/2015</h2>
+            <p>收入总额：<span>0.00</span></p>
+            <p>支出总额：<span>0.00</span></p>
+            <p>总体情况：<span>0.00</span></p>
+        </div>
+        <div id="add">
+            <a href="#">记一记</a>
+        </div>
+        <div id="wrap">
+            <ul>
+                <li class="border">1</li>
+                <li class="border">
+                    <h2>今天<span>0.00</span></h2>
+                </li>
+                <li class="border">
+                    <h2>近七天<span>0.00</span></h2>
+                </li>
+                <li class="border">
+                    <h2>本月<span>0.00</span></h2>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page1">
+        <div class="head">
+            <p><a href="#">返回</a></p>
+            <h2>记一记</h2>
+        </div>
+        <div id="category">
+            <ul>
+                <li class="border"><a href="#">收入</a></li>
+                <li class="border">
+                    <a href="#">衣服</a>
+                    <a href="#">饮食</a>
+                    <a href="#">住宿</a>
+                    <a href="#">交通</a>
+                </li>
+                <li class="border">
+                    <a href="#">购物</a>
+                    <a href="#">其他</a>
+                </li>
+            </ul>
+            <form>
+                <input type="text" value="日期，自动填写">
+                <input type="text" value="类别，自动填写">
+                <input type="number">
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>
